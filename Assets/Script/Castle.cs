@@ -46,7 +46,7 @@ public class Castle : MonoBehaviour
         }
     }
 
-    void setCreatePoints(GameObject soldier)
+    public void setCreatePoints(GameObject soldier)
     {
         int createPoint = soldier.GetComponent<Soldier>().createPoint;
         if(createPoint > 0 && point >= createPoint)

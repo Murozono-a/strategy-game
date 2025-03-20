@@ -18,6 +18,7 @@ public class GameManegerScript : MonoBehaviour
     private bool explanation = false;
     public bool enemyTurn;  // false -> プレイヤーのターン
     public bool gameFinished = false;
+    public Castle PlayerCastle {get => playerCastle;}
 
     // 優先度設定
     Soldier playerCastleSoldier;
