@@ -15,6 +15,7 @@ public class Soldier : MonoBehaviour
     private int fullHp;
 
 
+    [SerializeField] GameObject selectedPosition;
     [SerializeField] GameObject movePosition;
     [SerializeField] GameObject attackPosition;
     
@@ -73,6 +74,7 @@ public class Soldier : MonoBehaviour
     public void OnClick()
     {
         gameManegerScript.showStatus(hp,mobility,damage,attackRange,protect,attackStrong,player,move_finished,attack_finished);
+        setSelectedPosition();
         if(!gameManegerScript.enemyTurn && player)
         {
             if(!move_finished)
@@ -102,6 +104,9 @@ public class Soldier : MonoBehaviour
         attack_finished = true;
     }
     
+    void setSelectedPosition() {
+        Instantiate(selectedPosition, nowSpace.getPosition(), Quaternion.identity);
+    }
     void setNextSpaces()
     {
         GameManegerScript.Space[] nextSpaces = getNextSpaces();
