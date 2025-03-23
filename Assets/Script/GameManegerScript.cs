@@ -61,16 +61,7 @@ public class GameManegerScript : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
-            if (!explanation)
-            {
-                SceneManager.LoadScene(1, LoadSceneMode.Additive);
-                explanation = true;
-            }
-            else
-            {
-                SceneManager.UnloadSceneAsync(1);
-                explanation = false;
-            }
+            SwitchExplanation();
         }
 
         if(Input.GetKeyUp(KeyCode.Space)) finishPlayerTurn();
@@ -92,6 +83,20 @@ public class GameManegerScript : MonoBehaviour
         }
 
         pointInfo.text = "pt : " +  playerCastle.point.ToString();
+    }
+
+    public void SwitchExplanation()
+    {
+        if (!explanation)
+        {
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+            explanation = true;
+        }
+        else
+        {
+            SceneManager.UnloadSceneAsync(1);
+            explanation = false;
+        }
     }
 
     public void finishPlayerTurn()
