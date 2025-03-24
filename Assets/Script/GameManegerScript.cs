@@ -122,6 +122,7 @@ public class GameManegerScript : MonoBehaviour
         resultShowed = true;
         ResultManager resultManager = GameObject.Find("resultSceneManager").GetComponent<ResultManager>();
         resultManager.ShowResult(winner, turnCount);
+        Destroy(gameObject);
     }
 
     void createPriority()
