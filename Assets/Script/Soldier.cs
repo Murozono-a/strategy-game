@@ -91,7 +91,7 @@ public class Soldier : MonoBehaviour
     public void attack(Soldier target)
     {
         int giveDamage = Mathf.FloorToInt(((float)damage - ((float)target.protect / (float)attackStrong)) * ((float)hp / (float)fullHp));
-        if (giveDamage == 0) giveDamage = 1;
+        if (giveDamage <= 0) giveDamage = 1;
         if(giveDamage > 0)
         {
             target.hp -= giveDamage;
